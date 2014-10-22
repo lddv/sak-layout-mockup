@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+	<title>AC Swiss Army Knife</title>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">AC Swiss Army Knife</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Trainee</a></li>
+          <li class="active"><a href="#">Supervisor</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong>Trainee is done!</strong> Submit a review about the trainee progress.
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 thumbnail">
+          <img src="img/angularjs.png" width="300" height="300">
+        </div>
+        <div class="col-md-8">
+          <textarea class="form-control" rows="10"></textarea>
+          <br>
+          <button type="button" class="btn btn-primary pull-right" disabled="true">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
