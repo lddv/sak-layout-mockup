@@ -70,16 +70,16 @@
       <h2>Step 2</h2>
       <p>
         Watch Code School <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping Up With Angular.js</a> series
-        <button type="button" class="btn btn-default clear-2-1">Done?</button>
+        <button type="button" class="btn btn-default todo">Done?</button>
       </p>
 
       <p>
         Watch <a href="https://egghead.io/articles/new-to-angularjs-start-learning-here">EggHead.io Tutorial</a>
-        <button type="button" class="btn btn-default clear-2-2">Done?</button>
+        <button type="button" class="btn btn-default todo">Done?</button>
       </p>
 
       <p>Build a personal contact list with full CRUD operations.
-        <button type="button" class="btn btn-default clear-2-3">Done?</button>
+        <button type="button" class="btn btn-default todo">Done?</button>
       </p>
 
       <button type="button" class="btn btn-primary disabled">Finish</button>
@@ -98,21 +98,16 @@
       $(".course-2-details").fadeToggle(500);
     });
 
-    $(".clear-2-1").click(function(){
-      $(this).removeClass("btn-default");
-      $(this).addClass("btn-success");
-      $(this).text("Done!");
+    $(".todo").click(function(){
+      $(this).toggleClass("btn-default btn-success");
+      
+      if ($(this).hasClass("btn-success")) {
+      	$(this).text("Done!");
+      } else {
+      	$(this).text("Done?");
+      }
     });
-    $(".clear-2-2").click(function(){
-      $(this).removeClass("btn-default");
-      $(this).addClass("btn-success");
-      $(this).text("Done!");
-    });
-    $(".clear-2-3").click(function(){
-      $(this).removeClass("btn-default");
-      $(this).addClass("btn-success");
-      $(this).text("Done!");
-    });
+    
   });
   </script>
 </body>
