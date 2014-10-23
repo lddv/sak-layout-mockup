@@ -70,19 +70,19 @@
       <h2>Step 2</h2>
       <p>
         Watch Code School <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping Up With Angular.js</a> series
-        <button type="button" class="btn btn-default todo">Done?</button>
+        <button type="button" id="todo-2-1" class="btn btn-default todo">Done?</button>
       </p>
 
       <p>
         Watch <a href="https://egghead.io/articles/new-to-angularjs-start-learning-here">EggHead.io Tutorial</a>
-        <button type="button" class="btn btn-default todo">Done?</button>
+        <button type="button" id="todo-2-2" class="btn btn-default todo">Done?</button>
       </p>
 
       <p>Build a personal contact list with full CRUD operations.
-        <button type="button" class="btn btn-default todo">Done?</button>
+        <button type="button" id="todo-2-3" class="btn btn-default todo">Done?</button>
       </p>
 
-      <button type="button" class="btn btn-primary disabled">Finish</button>
+      <button type="button" id="finish-2" class="btn btn-primary disabled">Finish</button>
     </div>
   </div>
 
@@ -106,6 +106,19 @@
       } else {
       	$(this).text("Done?");
       }
+
+      if ($("#todo-2-1").hasClass("btn-success") && $("#todo-2-2").hasClass("btn-success") && $("#todo-2-3").hasClass("btn-success")) {
+        $("#finish-2").removeClass("disabled");
+      } else {
+        $("#finish-2").addClass("disabled");
+      }
+    });
+
+    $("#finish-2").click(function(){
+      $(".course-2").toggleClass("btn-default btn-success");
+      $(".course-2").find("span").toggleClass("glyphicon-play-circle glyphicon-ok-sign");
+      $(".progress-bar").width("50%");
+      $(".progress-bar").text("50%");
     });
     
   });
