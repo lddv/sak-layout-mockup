@@ -59,7 +59,7 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-primary pull-right" disabled="true">Submit</button>
+          <button type="button" id="submitButton" class="btn btn-primary pull-right disabled">Submit</button>
         </div>
       </div>
     </div>
@@ -86,17 +86,68 @@
     </div>
   </div>
 
+  <div class="jumbotron course-3-details">
+    <div class="container">
+      <h2>Step 3</h2>
+      <p>
+        Watch Code School <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping Up With Angular.js</a> series
+        <button type="button" id="todo-3-1" class="btn btn-default todo">Done?</button>
+      </p>
 
+      <p>
+        Watch <a href="https://egghead.io/articles/new-to-angularjs-start-learning-here">EggHead.io Tutorial</a>
+        <button type="button" id="todo-3-2" class="btn btn-default todo">Done?</button>
+      </p>
+
+      <p>Build a personal contact list with full CRUD operations.
+        <button type="button" id="todo-3-3" class="btn btn-default todo">Done?</button>
+      </p>
+
+      <button type="button" id="finish-3" class="btn btn-primary disabled">Finish</button>
+    </div>
+  </div>
+
+  <div class="jumbotron course-4-details">
+    <div class="container">
+      <h2>Step 4</h2>
+      <p>
+        Watch Code School <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping Up With Angular.js</a> series
+        <button type="button" id="todo-4-1" class="btn btn-default todo">Done?</button>
+      </p>
+
+      <p>
+        Watch <a href="https://egghead.io/articles/new-to-angularjs-start-learning-here">EggHead.io Tutorial</a>
+        <button type="button" id="todo-4-2" class="btn btn-default todo">Done?</button>
+      </p>
+
+      <p>Build a personal contact list with full CRUD operations.
+        <button type="button" id="todo-4-3" class="btn btn-default todo">Done?</button>
+      </p>
+
+      <button type="button" id="finish-4" class="btn btn-primary disabled">Finish</button>
+    </div>
+  </div>
 
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
-    $(".course-2-details").hide();
 
+    $(".course-2-details").hide();
     $(".course-2").click(function(){
       $(".course-2-details").fadeToggle(500);
     });
+
+    $(".course-3-details").hide();
+    $(".course-3").click(function(){
+      $(".course-3-details").fadeToggle(500);
+    });
+
+    $(".course-4-details").hide();
+    $(".course-4").click(function(){
+      $(".course-4-details").fadeToggle(500);
+    });
+
 
     $(".todo").click(function(){
       $(this).toggleClass("btn-default btn-success");
@@ -112,6 +163,18 @@
       } else {
         $("#finish-2").addClass("disabled");
       }
+
+      if ($("#todo-3-1").hasClass("btn-success") && $("#todo-3-2").hasClass("btn-success") && $("#todo-3-3").hasClass("btn-success")) {
+        $("#finish-3").removeClass("disabled");
+      } else {
+        $("#finish-3").addClass("disabled");
+      }
+
+      if ($("#todo-4-1").hasClass("btn-success") && $("#todo-4-2").hasClass("btn-success") && $("#todo-4-3").hasClass("btn-success")) {
+        $("#finish-4").removeClass("disabled");
+      } else {
+        $("#finish-4").addClass("disabled");
+      }
     });
 
     $("#finish-2").click(function(){
@@ -119,8 +182,25 @@
       $(".course-2").find("span").toggleClass("glyphicon-play-circle glyphicon-ok-sign");
       $(".progress-bar").width("50%");
       $(".progress-bar").text("50%");
+      $(".course-2-details").fadeToggle(500);
+    });
+
+    $("#finish-3").click(function(){
+      $(".course-3").toggleClass("btn-default btn-success");
+      $(".course-3").find("span").toggleClass("glyphicon-play-circle glyphicon-ok-sign");
+      $(".progress-bar").width("75%");
+      $(".progress-bar").text("75%");
+      $(".course-3-details").fadeToggle(500);
     });
     
+    $("#finish-4").click(function(){
+      $(".course-4").toggleClass("btn-default btn-success");
+      $(".course-4").find("span").toggleClass("glyphicon-play-circle glyphicon-ok-sign");
+      $(".progress-bar").width("100%");
+      $(".progress-bar").text("100%");
+      $(".course-4-details").fadeToggle(500);
+      $("#submitButton").removeClass("disabled");
+    });
   });
   </script>
 </body>
